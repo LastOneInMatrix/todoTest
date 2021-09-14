@@ -4,6 +4,12 @@ export type UserResponseType = {
     username: string,
     id: number
 };
+export type TaskResponseType = {
+    id: number,
+    title: string,
+    body: '',
+    userId: number
+}
 export type TodoResponseType = { userId: number, id: number, title: string, completed: boolean};
 
 type ErrorType = {}; // в данном REST API - не приходит респонс при ошибках
@@ -30,5 +36,8 @@ export const todosAPI = {
     },
     deleteTodos(id: number) {
         return instance.delete<{}>(`/todos/${id}`).then(res => res.data)
+    },
+    addTask(id: number, title: string) {
+        return instance.post<TaskResponseType>(`/todos/`, {title: title, userId: id}).then(res => res.data)
     }
 }
