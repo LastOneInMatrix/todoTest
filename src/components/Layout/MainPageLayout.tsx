@@ -33,7 +33,7 @@ export const MainPageLayout = (props: CommonPropsType) => {
 
     return (
         <Layout style={{minHeight: '100vh'}}>
-            <Sider collapsedWidth={70} width={200} collapsible collapsed={collapsed} onCollapse={onCollapse}>
+            <Sider collapsedWidth={70} width={240} collapsible collapsed={collapsed} onCollapse={onCollapse}>
                 <div className="logo"/>
                 <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
                     <SubMenu key="users" icon={<UserOutlined/>} title="User">

@@ -49,7 +49,7 @@ export const TableComponent: React.FC<PropsType> = React.memo(({task}) => {
                                 <Modal destroyOnClose={true} mask={false} title="Change Task Title" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                                     <p>Task id: {activeTaskID}</p>
                                     <p>{(task[task.findIndex(t => t.id === activeTaskID)])?.title}</p>
-                                    <input placeholder={'type task text'} onChange={(e) => setText(e.currentTarget.value)} value={text}></input>
+                                    <input placeholder={'type task text'} onChange={(e) => setText(e.currentTarget.value)} value={text}/>
                                 </Modal>
                                 <Button type="primary" onClick={showModal(data.id)} style={{padding: '5px', margin: '5px'}}>
                                     <EditOutlined />
